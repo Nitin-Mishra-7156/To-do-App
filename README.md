@@ -14,7 +14,7 @@ This project is a simple **To-Do Application** built using **Flask** (backend), 
 
 ## Prerequisites
 - Python 3.x
-- Flask (`pip install flask`)
+- Flask
 - SQLite3
 - AngularJS (included via CDN)
 - Bootstrap (included via CDN)
@@ -25,14 +25,24 @@ This project is a simple **To-Do Application** built using **Flask** (backend), 
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository_url>
-cd <project_directory>
+git clone https://github.com/Nitin-Mishra-7156/To-do-App.git
+cd To-Do-App
 ```
 
 ### 2. Install Required Python Packages
+
+#### Using `requirements.txt`:
+A `requirements.txt` file is included to simplify package installation. Run the following command:
 ```bash
-pip install flask
+pip install -r requirements.txt
 ```
+
+The file contains:
+```
+flask
+```
+
+This installs Flask and its dependencies automatically.
 
 ### 3. Set Up the Database
 1. **Initialize Database**: The database tables will automatically be created when you run the app for the first time.
@@ -57,7 +67,7 @@ pip install flask
          FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
      );
      ```
- 3. **Manual SQLite Modification for `category_id`
+ 3. **Manual SQLite Modification for `category_id`**
 
      If you initially created the `todos` table without the `category_id` column, follow these steps to add the column manually using the SQLite terminal:
 
@@ -154,9 +164,4 @@ Here’s what you can expect:
 
 ---
 
-## Troubleshooting
-1. **SQLite Not Found**: Ensure SQLite is installed and added to your system's PATH.
-2. **Category Already Exists**: Duplicate category names are not allowed.
-3. **Task Requires Category**: Tasks must be associated with a valid category.
 
----
